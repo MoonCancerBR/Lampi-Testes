@@ -43,7 +43,7 @@ Abaixo, um exemplo de um script `.robot` para testar a busca de um usuário por 
 Library    RequestsLibrary
 
 *** Variables ***
-${BASE_URL}    [https://jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com)
+${BASE_URL}    https://jsonplaceholder.typicode.com
 
 *** Test Cases ***
 Validar Busca de Usuário Sucesso (GET)
