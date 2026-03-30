@@ -66,12 +66,14 @@ Explicação do Exemplo:
 4.  **GET On Session:** Fazemos a chamada ao endpoint /users/1.
 5.  **Status Should Be:** Validamos se o código de status é 200.
 6.  **Should Be Equal:** Verificamos se um campo específico do JSON retornado é exatamente o que esperávamos.
-
 ---
 
 ## 5. 📊 Fluxo de Trabalho da Automação
 
 1.  **Escrita:** O QA escreve o caso de teste em formato .robot.
 2.  **Execução:** O Robot Framework interpreta as keywords e usa a RequestsLibrary para enviar o HTTP.
-3.  **Validação:** O script compara a resposta real com a esperada.
-4.  **Relatório:** O sistema gera um report.html com o passo a passo e o status de sucesso/falha.
+   ```bash
+python -m robot nome_do_arquivo.robot
+```
+4.  **Validação:** O script compara a resposta real com a esperada.
+5.  **Relatório:** O sistema gera um report.html com o passo a passo e o status de sucesso/falha.
