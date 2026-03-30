@@ -25,7 +25,7 @@ O **Robot Framework** é um framework de automação de código aberto, genéric
 
 ## 3. 📚 RequestsLibrary
 
-A **RequestsLibrary** é a biblioteca padrão do Robot Framework para interagir com APIs REST. Ela é baseada na famosa biblioteca `requests` do Python.
+A **RequestsLibrary** é a biblioteca mais utilizada pela comunidade para interagir com APIs REST. Ela é baseada na famosa biblioteca `requests` do Python.
 
 **Conceitos Básicos:**
 - **Create Session:** Estabelece uma conexão base com o servidor (URL base).
@@ -48,11 +48,13 @@ ${BASE_URL}    https://jsonplaceholder.typicode.com
 *** Test Cases ***
 Validar Busca de Usuário Sucesso (GET)
     [Documentation]    Verifica se a API retorna os dados corretos do usuário 1
-    Create Session    alias=api_session    url=${BASE_URL}    disable_warnings=1
+    # Criamos a sessão passando o apelido (alias) e a URL base
+    Create Session    api_session    ${BASE_URL}    disable_warnings=1
     
     ${RESPOSTA}    GET On Session    api_session    /users/1
     
     Status Should Be    200    ${RESPOSTA}
+    # Acessando o campo 'username' dentro do dicionário JSON retornado
     Should Be Equal As Strings    ${RESPOSTA.json()['username']}    Bret
     Log To Console    \nNome do usuário validado: ${RESPOSTA.json()['name']}
 ```
